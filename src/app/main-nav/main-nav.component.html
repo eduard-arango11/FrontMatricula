@@ -1,0 +1,80 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary" class="fixed-header">Menu</mat-toolbar>
+    <mat-nav-list>
+      <!--a mat-list-item [routerLink]="['/usuarios/registrar']" routerLinkActive="on">
+        <mat-icon mat-list-icon>person</mat-icon>Usuarios
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>playlist_add_check</mat-icon>Permisos
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>group</mat-icon>Grupos
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>replay</mat-icon>General
+      </a>
+      <a mat-list-item [routerLink]="['/inventario/productos/registrar']" routerLinkActive="on">
+        <mat-icon mat-list-icon>category</mat-icon>Productos
+      </a-->
+      <mat-accordion displayMode="flat">
+        <mat-expansion-panel hideToggle="true" #matExpansionPanel>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanel, $event)" [routerLink]="['/alumnos']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>school</mat-icon><span>Alumnos</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" #matExpansionPanelProfesor>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanelProfesor, $event)" [routerLink]="['/profesores']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>groups</mat-icon><span>Profesores</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" #matExpansionPanel2>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanel2, $event)" [routerLink]="['/asignaturas']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>library_books</mat-icon><span>Asignaturas</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" #matExpansionPanelPeriodos>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanelPeriodos, $event)" [routerLink]="['/periodos']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>today</mat-icon><span>Periodos</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" #matExpansionPanelCursos>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanelCursos, $event)" [routerLink]="['/cursos']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>content_paste</mat-icon><span>Cursos</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle="true" #matExpansionPanelMatriculas>
+          <mat-expansion-panel-header (click)="expandPanel(matExpansionPanelMatriculas, $event)" [routerLink]="['/matriculas']">
+            <div class="acordion-link">
+              <mat-icon mat-list-icon>archive</mat-icon><span>Matricula</span>
+            </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" role="heading">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="page-title">Gestion de Matriculación</span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="accent">Iniciar sesion</button>
+    </mat-toolbar>
+    <div class="inner-sidenav-content" style="margin: 20px;">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

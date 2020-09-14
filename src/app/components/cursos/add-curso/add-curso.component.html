@@ -1,0 +1,48 @@
+<div class="registro">
+  <mat-card class="tarjeta-registro">
+    <mat-card-header>
+      <mat-card-title>Registrar curso</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="registro-form">
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Grupo" required [(ngModel)]="curso.grupo" name="grupo">
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Cupo" [(ngModel)]="curso.cupo" name="cupo">
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <mat-select placeholder="Periodo Academico" required [(ngModel)]="curso.periodo_academico" name="periodo_academico">
+            <mat-option *ngFor="let periodo of periodos" [value]="periodo.id">
+              {{periodo.nombre}}
+            </mat-option>
+          </mat-select>
+          <!--input matInput placeholder="Periodo Academico" required [(ngModel)]="curso.periodo_academico" name="periodo_academico"-->
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <mat-select placeholder="Asignatura" required [(ngModel)]="curso.asignatura" name="asignatura">
+            <mat-option *ngFor="let asignatura of asignaturas" [value]="asignatura.id">
+              {{asignatura.nombre}}
+            </mat-option>
+          </mat-select>
+          <!--input matInput placeholder="Asignatura" required [(ngModel)]="curso.asignatura" name="asignatura"-->
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <mat-select placeholder="Profesor" required [(ngModel)]="curso.profesor" name="profesor">
+            <mat-option *ngFor="let profesor of profesores" [value]="profesor.id">
+              {{profesor.nombre}}
+            </mat-option>
+          </mat-select>
+          <!--input matInput placeholder="Profesor" required [(ngModel)]="curso.profesor" name="profesor"-->
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="saveCurso()">Registrar</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="lista">
+    <app-cursos-list [listaCursos]="miLista"></app-cursos-list>
+  </div>
+</div>
+

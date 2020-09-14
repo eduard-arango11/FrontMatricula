@@ -1,0 +1,46 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.page-title{
+  cursor: pointer;
+}
+
+.page-title:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+
+.elemento-lista{
+  color: rgba(0, 0, 0, 0.65); padding-left: 20px;
+}
+
+.acordion-link{
+  display: flex; 
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  
+  span{
+    margin-left: 5px; 
+    color: rgba(0, 0, 0, 0.65); 
+    font-size: 16px;
+  }
+}

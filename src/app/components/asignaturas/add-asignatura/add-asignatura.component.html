@@ -1,0 +1,26 @@
+<div class="registro">
+  <mat-card class="tarjeta-registro">
+    <mat-card-header>
+      <mat-card-title>Registrar asignatura</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="registro-form">
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Nombre" required [(ngModel)]="asignatura.nombre" name="nombre">
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Codigo" [(ngModel)]="asignatura.codigo" name="codigo">
+        </mat-form-field>
+        <mat-form-field style="width: 400px;" class="form-element">
+          <textarea matInput placeholder="Descripcion" rows="5" [(ngModel)]="asignatura.descripcion" name="descripcion"></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="saveAsignatura()">Registrar</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="lista">
+    <app-asignaturas-list [listaAsignaturas]="miLista"></app-asignaturas-list>
+  </div>
+</div>

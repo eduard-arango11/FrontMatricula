@@ -1,0 +1,21 @@
+.registro{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tarjeta-registro {
+    width: 500px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.lista{
+    flex-grow: 1;
+}
+
+.form-element{
+    margin: 20px;
+}

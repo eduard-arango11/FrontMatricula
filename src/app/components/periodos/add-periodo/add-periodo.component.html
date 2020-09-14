@@ -1,0 +1,26 @@
+<div class="registro">
+  <mat-card class="tarjeta-registro">
+    <mat-card-header>
+      <mat-card-title>Registrar periodo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="registro-form">
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Nombre" required [(ngModel)]="periodo.nombre" name="nombre">
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Fecha Inicio (YYYY-MM-DD)" required [(ngModel)]="periodo.fecha_inicio" name="fecha_inicio">
+        </mat-form-field>
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Fecha Fin (YYYY-MM-DD)" required [(ngModel)]="periodo.fecha_fin" name="fecha_fin">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="savePeriodo()">Registrar</button>
+    </mat-card-actions>
+  </mat-card>
+  <div class="lista">
+    <app-periodos-list [listaPeriodos]="miLista"></app-periodos-list>
+  </div>
+</div>
